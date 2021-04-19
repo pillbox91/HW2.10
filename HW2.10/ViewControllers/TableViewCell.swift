@@ -10,19 +10,20 @@ import UIKit
 class TableViewCell: UITableViewCell {
 
     
-    @IBOutlet var imageView: UIImageView!
+    
+    @IBOutlet var imageViewCell: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     
     func configure(with rick: RickAndMorty) {
         nameLabel.text = rick.name
         
         DispatchQueue.global().async {
-            guard let stringURL = rick.imageURL else { return }
+            guard let stringURL = rick.image else { return }
             guard let imageURL = URL(string: stringURL) else { return }
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
             
             DispatchQueue.main.async {
-                self.imageView.image = UIImage(data: imageData)
+                self.imageViewCell.image = UIImage(data: imageData)
             }
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32040441262C01FB00D39CD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32040440262C01FB00D39CD0 /* ViewController.swift */; };
 		322AE1E92628AEE4000D4579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322AE1E82628AEE4000D4579 /* AppDelegate.swift */; };
 		322AE1EB2628AEE4000D4579 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322AE1EA2628AEE4000D4579 /* SceneDelegate.swift */; };
 		322AE1F02628AEE4000D4579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322AE1EE2628AEE4000D4579 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32040440262C01FB00D39CD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		322AE1E52628AEE4000D4579 /* HW2.10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		322AE1E82628AEE4000D4579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		322AE1EA2628AEE4000D4579 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				322AE1EE2628AEE4000D4579 /* Main.storyboard */,
+				32040440262C01FB00D39CD0 /* ViewController.swift */,
 				322AE1F32628AEEB000D4579 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32040441262C01FB00D39CD0 /* ViewController.swift in Sources */,
 				322AE2132628B76E000D4579 /* TableViewCell.swift in Sources */,
 				322AE2102628B21F000D4579 /* RickAndMorty.swift in Sources */,
 				322AE1E92628AEE4000D4579 /* AppDelegate.swift in Sources */,
@@ -336,7 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q56H3JNA98;
-				INFOPLIST_FILE = HW2.10/Info.plist;
+				INFOPLIST_FILE = HW2.10/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q56H3JNA98;
-				INFOPLIST_FILE = HW2.10/Info.plist;
+				INFOPLIST_FILE = HW2.10/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
