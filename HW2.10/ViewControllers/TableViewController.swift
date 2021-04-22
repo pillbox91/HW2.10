@@ -10,11 +10,18 @@ import UIKit
 class TableViewController: UITableViewController {
     
     private var rickAndMorty: [RickAndMorty] = []
-    private var website: WebsiteDescription!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchCourses()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 100
+        fetchCourses()
     }
     
     // MARK: - Table view data source
@@ -46,7 +53,9 @@ extension TableViewController {
             do {
                 let website = try jsonDecoder.decode(WebsiteDescription.self, from: data)
                 self.rickAndMorty = website.results ?? []
-                print(website)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             } catch let error {
                 print(error)
             }
