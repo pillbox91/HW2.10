@@ -9,9 +9,14 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    
-    
-    @IBOutlet var imageViewCell: UIImageView!
+    @IBOutlet var imageViewCell: UIImageView! {
+        didSet {
+            imageViewCell.contentMode = .scaleAspectFit
+            imageViewCell.clipsToBounds = true
+            imageViewCell.layer.cornerRadius = imageViewCell.bounds.height / 2
+            imageViewCell.backgroundColor = .white
+        }
+    }
     @IBOutlet var nameLabel: UILabel!
     
     func configure(with rick: RickAndMorty) {

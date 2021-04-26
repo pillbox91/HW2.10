@@ -6,23 +6,19 @@
 //
 
 import UIKit
+import Alamofire
 
 class TableViewController: UITableViewController {
     
     private var rickAndMorty: [RickAndMorty] = []
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fetchCourses()
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 75
         fetchCourses()
     }
+    
+  
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,11 +41,11 @@ class TableViewController: UITableViewController {
 extension TableViewController {
     func fetchCourses() {
         guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { return }
-        
+
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else { return }
             let jsonDecoder = JSONDecoder()
-            
+
             do {
                 let website = try jsonDecoder.decode(WebsiteDescription.self, from: data)
                 self.rickAndMorty = website.results ?? []
@@ -61,4 +57,5 @@ extension TableViewController {
             }
         }.resume()
     }
+    
 }
