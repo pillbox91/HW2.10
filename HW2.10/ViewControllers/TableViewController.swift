@@ -35,6 +35,14 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        guard let detailsVC = segue.destination as? ViewController else { return }
+        
+        detailsVC.person = rickAndMorty[indexPath.row]
+    }
+    
 }
 
 // MARK: - Networking
