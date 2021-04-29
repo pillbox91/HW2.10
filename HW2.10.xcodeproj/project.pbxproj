@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3201438126382693003E75B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201438026382693003E75B5 /* ViewController.swift */; };
+		3201439726396A42003E75B5 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201439626396A42003E75B5 /* Networking.swift */; };
 		322AE1E92628AEE4000D4579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322AE1E82628AEE4000D4579 /* AppDelegate.swift */; };
 		322AE1EB2628AEE4000D4579 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322AE1EA2628AEE4000D4579 /* SceneDelegate.swift */; };
 		322AE1F02628AEE4000D4579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 322AE1EE2628AEE4000D4579 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		154927D616B7240C863904C9 /* Pods-HW2.10.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW2.10.debug.xcconfig"; path = "Target Support Files/Pods-HW2.10/Pods-HW2.10.debug.xcconfig"; sourceTree = "<group>"; };
 		2EDB046EC3B8A5D2036F22BA /* Pods_HW2_10.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HW2_10.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3201438026382693003E75B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3201439626396A42003E75B5 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		322AE1E52628AEE4000D4579 /* HW2.10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		322AE1E82628AEE4000D4579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		322AE1EA2628AEE4000D4579 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				322AE20F2628B21F000D4579 /* RickAndMorty.swift */,
+				3201439626396A42003E75B5 /* Networking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				322AE1E92628AEE4000D4579 /* AppDelegate.swift in Sources */,
 				322AE2092628B0A0000D4579 /* TableViewController.swift in Sources */,
 				322AE1EB2628AEE4000D4579 /* SceneDelegate.swift in Sources */,
+				3201439726396A42003E75B5 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

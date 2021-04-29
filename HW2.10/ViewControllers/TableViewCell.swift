@@ -8,7 +8,7 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
+    
     @IBOutlet var imageViewCell: UIImageView! {
         didSet {
             imageViewCell.contentMode = .scaleAspectFit

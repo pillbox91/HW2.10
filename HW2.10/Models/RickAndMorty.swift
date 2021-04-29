@@ -4,16 +4,21 @@
 //
 //  Created by Андрей Аверьянов on 15.04.2021.
 //
+import Foundation
 
-
-struct WebsiteDescription: Decodable {
-    let results: [RickAndMorty]?
-//    let websiteDescription: String?
-//    let websiteName: String?
-}
-
-struct RickAndMorty: Decodable {
+struct RickAndMorty {
+    let results: Any?
     let name: String?
     let image: String?
-//    let link: String?
+    
+    init(rickData: [String: Any]) {
+        results = rickData["results"] as? [Any]
+        name = rickData["name"] as? String
+        image = rickData["image"] as? String
+    }
+    
+    static func getRick(from value: Any) -> [RickAndMorty]? {
+        guard let ricksData = value as? [String : Any], let result = ricksData["results"] as? [[String: Any]] else { return [] }
+        return result.compactMap { RickAndMorty(rickData: $0) }
+    }
 }

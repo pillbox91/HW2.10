@@ -11,14 +11,19 @@ import Alamofire
 class TableViewController: UITableViewController {
     
     private var rickAndMorty: [RickAndMorty] = []
+    private let url = "https://rickandmortyapi.com/api/character"
+    private let url2 = "https://rickandmortyapi.com/api/character?page=2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 75
-        fetchCourses()
+        NetworkManager.shared.getResponse(from: url) {rickAndMorty in
+            self.rickAndMorty = rickAndMorty
+            self.tableView.reloadData()
+        }
     }
     
-  
+    
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,25 +50,3 @@ class TableViewController: UITableViewController {
     
 }
 
-// MARK: - Networking
-extension TableViewController {
-    func fetchCourses() {
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { return }
-
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data else { return }
-            let jsonDecoder = JSONDecoder()
-
-            do {
-                let website = try jsonDecoder.decode(WebsiteDescription.self, from: data)
-                self.rickAndMorty = website.results ?? []
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(error)
-            }
-        }.resume()
-    }
-    
-}
