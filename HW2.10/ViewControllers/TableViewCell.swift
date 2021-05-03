@@ -9,6 +9,10 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    var gender: String?
+    var species: String?
+    var status: String?
+    
     @IBOutlet var imageViewCell: UIImageView! {
         didSet {
             imageViewCell.contentMode = .scaleAspectFit
@@ -21,6 +25,9 @@ class TableViewCell: UITableViewCell {
     
     func configure(with rick: RickAndMorty) {
         nameLabel.text = rick.name
+        gender = rick.gender
+        species = rick.species
+        status = rick.status
         
         DispatchQueue.global().async {
             guard let stringURL = rick.image else { return }

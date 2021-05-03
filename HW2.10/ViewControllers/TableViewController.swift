@@ -12,7 +12,7 @@ class TableViewController: UITableViewController {
     
     private var rickAndMorty: [RickAndMorty] = []
     private let url = "https://rickandmortyapi.com/api/character"
-    private let url2 = "https://rickandmortyapi.com/api/character?page=2"
+    private let urlTwo = "https://rickandmortyapi.com/api/character?page=2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +42,16 @@ class TableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        guard let detailsVC = segue.destination as? ViewController else { return }
-        
-        detailsVC.person = rickAndMorty[indexPath.row]
-    }
+        if segue.identifier == "detailCell" {
+            let detailVC = segue.destination as! ViewController
+            let cell = sender as! TableViewCell
+            detailVC.image = cell.imageViewCell.image
+            detailVC.text = cell.nameLabel
+            detailVC.gender = cell.gender
+            detailVC.status = cell.status
+            detailVC.species = cell.species
+        }
     
 }
 
+}

@@ -10,11 +10,19 @@ struct RickAndMorty {
     let results: Any?
     let name: String?
     let image: String?
+    let species: String?
+    let gender: String?
+    let status: String?
     
     init(rickData: [String: Any]) {
         results = rickData["results"] as? [Any]
         name = rickData["name"] as? String
         image = rickData["image"] as? String
+        species = rickData["species"] as? String
+        gender = rickData["gender"] as? String
+        status = rickData["status"] as? String
+
+
     }
     
     static func getRick(from value: Any) -> [RickAndMorty]? {

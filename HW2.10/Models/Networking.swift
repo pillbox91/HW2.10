@@ -14,7 +14,7 @@ class NetworkManager{
     
     private init() {}
     
-    func getResponse(from urlString: String, with complition: @escaping ([RickAndMorty]) -> ()) {
+    func getResponse(from urlString: String, with completion: @escaping ([RickAndMorty]) -> ()) {
         AF.request(urlString)
             .validate()
             .responseJSON { dataResponse in
@@ -22,7 +22,7 @@ class NetworkManager{
                 case .success(let value):
                     let ricks = RickAndMorty.getRick(from: value)
                     DispatchQueue.main.async {
-                        complition(ricks ?? [] )
+                        completion(ricks ?? [] )
                     }
                 case .failure(let error):
                     print(error)
@@ -30,3 +30,4 @@ class NetworkManager{
             }
     }
 }
+
